@@ -31,7 +31,7 @@ return (
             </div>
             <div className="">
                 <label htmlFor="">จำนวนเงิน</label>
-                <input type="number" placeholder='ราคา(บ)' onChange={inputAmount} value={amount} />
+                <input type="number" placeholder='ราคา(บาท)' onChange={inputAmount} value={amount} />
             </div>
             <div >
                 <button type="submit" className='btn'>เพิ่มข้อมูล</button>
