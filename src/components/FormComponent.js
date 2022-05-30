@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './FormComponent.css'
 
-const FormComponent = () =>{
+const FormComponent = (props) =>{
     const inputTitle = (event) =>{
         console.log(event.target.value);
         setTitle(event.target.value);
@@ -17,6 +17,7 @@ const FormComponent = () =>{
             amount:Number(amount)
         }
         console.log('นี่คือ '+itemData.title+' ราคา '+itemData.amount);
+        props.onAddItem(itemData)
         setTitle('')
         setAmount('')
     }

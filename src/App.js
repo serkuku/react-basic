@@ -24,6 +24,9 @@ const Description = () => {
 
 function App() {
   const [dataList, setDataList] = useState([]);
+  const onAddNewItem = (newItem) => {
+    console.log("data is ",newItem);
+  }
   const getData = () => {
     Axios.get("https://jsonplaceholder.typicode.com/posts").then((response) => {
       setDataList(response.data);
@@ -41,7 +44,7 @@ function App() {
     <div className="container">
       <Title name="อบจ.สตูล" />
       <Description />
-      <FormComponent />
+      <FormComponent onAddItem={onAddNewItem}/>
       <ListComponent />
       press to render myList
       <button onClick={getData}>Get Data</button>
