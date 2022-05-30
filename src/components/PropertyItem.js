@@ -1,8 +1,8 @@
 import './Item.css'
 
-const PropertyItem = ({name,amount},key) => {
+const PropertyItem = ({title,amount},key) => {
   return (
-    <li ><span>{name}</span><span>{amount}</span></li>
+    <li ><span>{title}</span><span>{amount}</span></li>
   );
 };
 
