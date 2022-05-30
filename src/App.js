@@ -48,10 +48,10 @@ function App() {
     <div className="container">
       <Title name="อบจ.สตูล" />
       <Description />
-      <ListComponent />
-      press to render myList
+       press to render myList
       <button onClick={getData}>Get Data</button>
-
+      <ListComponent />
+    
       <ul className="item-list">
         {/* {dataList.map((val,key)=>{
           return (
