@@ -2,22 +2,24 @@ import Axios from "axios";
 import { useState } from "react";
 import "./App.css";
 import Item from "./components/Item";
-import FormComponent from "./components/FormComponent";
 import ListComponent from "./components/ListComponent";
 
 
 const design = {
-  color: "blue",
+  textDecoration: "underline red 0.3rem",
   textAlign: "center",
   fontSize: "1.5rem",
+  background: "rgb(255, 230, 230)",
+  border: "2px solid #555",
+  borderRadius: "10px"
 };
 const Title = (props) => (
-  <h1 style={design}>โปรแกรมบัญชีพัสดุ ทรัพย์สิน {props.name}</h1>
+  <h1 style={design} >โปรแกรมรายรับ รายจ่าย {props.name}</h1>
 );
 const Description = () => {
   return (
-    <p style={{ color: "red", textAlign: "center", fontSize: "1.5rem" }}>
-      เรียกข้อมูลพัสดุที่มี
+    <p style={{ color: "red", textAlign: "center", fontSize: "1.3rem" }}>
+      เรียกข้อมูลจาก API
     </p>
   );
 };
@@ -48,8 +50,7 @@ function App() {
     <div className="container">
       <Title name="อบจ.สตูล" />
       <Description />
-       press to render myList
-      <button onClick={getData}>Get Data</button>
+      <button onClick={getData}>Get Data From API</button>
       <ListComponent />
     
       <ul className="item-list">

@@ -10,6 +10,7 @@ const FormComponent = (props) =>{
         console.log(event.target.value);
         setAmount(event.target.value);
     }
+    
     const saveItem = (event) =>{
         event.preventDefault()
         const itemData = {
@@ -18,23 +19,23 @@ const FormComponent = (props) =>{
         }
         console.log('นี่คือ '+itemData.title+' ราคา '+itemData.amount);
         props.onAddItem(itemData)
-        setTitle('')
-        setAmount('')
+        setTitle([])
+        setAmount([])
     }
-    const [title,setTitle] = useState('')
-    const [amount,setAmount] = useState('')
+    const [title,setTitle] = useState([])
+    const [amount,setAmount] = useState([])
 return (
-    <div className="form-control">
+    <div>
         <form onSubmit={saveItem}>
-            <div className="">
+            <div>
                 <label htmlFor="">ชื่อรายการ</label>
-                <input type="text" placeholder='ระบุชื่อรายการ' onChange={inputTitle} value={title} />
+                <input type="text" placeholder='ระบุชื่อรายการ' onChange={inputTitle} value={title} required/>
             </div>
-            <div className="">
+            <div>
                 <label htmlFor="">จำนวนเงิน</label>
-                <input type="number" placeholder='ราคา(บาท)' onChange={inputAmount} value={amount} />
+                <input type="number" placeholder='ราคา(บาท)' onChange={inputAmount} value={amount} required/>
             </div>
-            <div >
+            <div>
                 <button type="submit" className='btn'>เพิ่มข้อมูล</button>
             </div>
         </form>
