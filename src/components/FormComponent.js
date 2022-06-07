@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import './FormComponent.css'
 
 const FormComponent = (props) =>{
+    const [title,setTitle] = useState([])
+    const [amount,setAmount] = useState([])
+
     const inputTitle = (event) =>{
         console.log(event.target.value);
         setTitle(event.target.value);
@@ -22,8 +25,9 @@ const FormComponent = (props) =>{
         setTitle([])
         setAmount([])
     }
-    const [title,setTitle] = useState([])
-    const [amount,setAmount] = useState([])
+    useEffect(()=>{
+        console.log("call useEffect");
+    })
 return (
     <div>
         <form onSubmit={saveItem}>

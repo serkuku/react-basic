@@ -17,6 +17,7 @@ function ListComponent() {
     });
   };
   return (
+    
     <div className="form-control">
         <FormComponent onAddItem={onAddNewItem} />
       <div >

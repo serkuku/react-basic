@@ -3,8 +3,6 @@ import { useState } from "react";
 import "./App.css";
 import Item from "./components/Item";
 import ListComponent from "./components/ListComponent";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
 import LoadingButton from "@mui/lab/LoadingButton";
 import SendIcon from "@mui/icons-material/Send";
 import Card from "@mui/material/Card";
@@ -14,8 +12,7 @@ import CardMedia from "@mui/material/CardMedia";
 import { CardActionArea } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import React from "react";
-import QRCode from 'react-qr-code'
-import QRText from './QRText'
+import QRText from "./QRText";
 
 const design = {
   textDecoration: "underline red 0.3rem",
@@ -39,7 +36,6 @@ const Description = () => {
 function App() {
   const [dataList, setDataList] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [qrText, setQrText] = useState("");
   // const [dataItem, setDataItem] = useState([]);
   // const onAddNewItem = (newItem) => {
   //   console.log("data is ",newItem);
@@ -73,56 +69,31 @@ function App() {
               image="../../images/satunpao.png"
               alt="satunpao logo"
             />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                อบจ.สตูล
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                เรียกข้อมูลจาก API
+              </Typography>
+            </CardContent>
           </div>
-
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              อบจ.สตูล
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              เรียกข้อมูลจาก API
-            </Typography>
-          </CardContent>
-
-          <CardActions sx={{ flexDirection: "column" }}>
-            <LoadingButton
-              size="small"
-              color="secondary"
-              onClick={getData}
-              onChange={() => setLoading(!loading)}
-              loading={loading}
-              loadingPosition="start"
-              startIcon={<SendIcon />}
-              variant="contained"
-            >
-              Get Data From API
-            </LoadingButton>
-            <ListComponent />
-            <QRText />
-            <ul className="item-list">
-              {/* {dataList.map((val,key)=>{
-          return (
-            <Item name={val} key={key} />
-          )
-        })} */}
-              {myList}
-            </ul>
-          </CardActions>
         </CardActionArea>
+        <CardActions sx={{ flexDirection: "column" }}>
+          <LoadingButton
+            size="small"
+            color="secondary"
+            onClick={getData}
+            onChange={() => setLoading(!loading)}
+            loading={loading}
+            loadingPosition="start"
+            startIcon={<SendIcon />}
+            variant="contained">Get Data From API</LoadingButton>
+          <ListComponent />
+          <QRText />
+          <ul className="item-list">{myList}</ul>
+        </CardActions>
       </Card>
-
-      {/* <button onClick={getData}>Get Data From API</button> */}
-      {/* <LoadingButton
-          size="small"
-          color="secondary"
-          onClick={getData}
-          onChange={() => setLoading(!loading)}
-          loading={loading}
-          loadingPosition="start"
-          startIcon={<SendIcon />}
-          variant="contained"
-        >Get Data From API</LoadingButton>
-       */}
     </div> //root element
   );
 }
