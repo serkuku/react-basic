@@ -13,25 +13,7 @@ import { CardActionArea } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import React from "react";
 import QRText from "./QRText";
-
-const design = {
-  textDecoration: "underline red 0.3rem",
-  textAlign: "center",
-  fontSize: "1.5rem",
-  background: "rgb(255, 230, 230)",
-  border: "2px solid #555",
-  borderRadius: "10px",
-};
-const Title = (props) => (
-  <h1 style={design}>โปรแกรมรายรับ รายจ่าย {props.name}</h1>
-);
-const Description = () => {
-  return (
-    <p style={{ color: "red", textAlign: "center", fontSize: "1.3rem" }}>
-      เรียกข้อมูลจาก API
-    </p>
-  );
-};
+import DataContext from "./data/DataContext";
 
 function App() {
   const [dataList, setDataList] = useState([]);
@@ -59,8 +41,8 @@ function App() {
   console.log(myList);
 
   return (
+    <DataContext.Provider value={"satunpao"}>
     <div className="">
-      
       <Card sx={{ maxWidth: 2000 }}>
         <CardActionArea>
           <div className="container">
@@ -75,7 +57,7 @@ function App() {
                 อบจ.สตูล
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                เรียกข้อมูลจาก API
+                เรียกข้อมูลจาก API/เพิ่มรายการข้อมูล/Generate QR Code
               </Typography>
             </CardContent>
           </div>
@@ -95,7 +77,8 @@ function App() {
           <ul className="item-list">{myList}</ul>
         </CardActions>
       </Card>
-    </div> //root element
+    </div> 
+    </DataContext.Provider>
   );
 }
 

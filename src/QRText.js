@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState} from "react";
 import QRCode from 'react-qr-code'
 
 function QRText() {
   const [text, setText] = useState("");
   const [qrText, setQrText] = useState("");
+  
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -12,12 +13,12 @@ function QRText() {
     return false;
   }
 
+
   return (
     <div className="form-control">
-    {qrText.length > 0 && <QRCode value={qrText} />}
+      {qrText.length > 0 && <QRCode value={qrText} />}
     <form onSubmit={handleSubmit}>
       <div>
-      
         <label htmlFor="">Text or URL</label>
         <input
           type="text"
