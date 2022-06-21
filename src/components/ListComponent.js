@@ -1,7 +1,6 @@
 import PropertyItem from "./PropertyItem";
 import { useState } from "react";
 import FormComponent from "./FormComponent";
-import DataContext from "../data/DataContext";
 
 function ListComponent() {
   // const data = [
@@ -27,7 +26,7 @@ function ListComponent() {
             return <PropertyItem {...element} key={key}  />;
           })}
         </ul>
-        <DataContext.Consumer>{value=><p>{value}</p>}</DataContext.Consumer>
+        
       </div>
     </div>
   );
