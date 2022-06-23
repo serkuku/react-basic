@@ -13,7 +13,6 @@ import { CardActionArea } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import React from "react";
 import QRText from "./QRText";
-import DataContext from "./data/DataContext";
 
 function App() {
   const [dataList, setDataList] = useState([]);
@@ -42,7 +41,7 @@ function App() {
 
   return (
     
-    <DataContext.Provider value={"satunpao"}>
+   
     <div className="">
       <Card sx={{ maxWidth: 2000 }}>
         <CardActionArea>
@@ -79,7 +78,7 @@ function App() {
         </CardActions>
       </Card>
     </div> 
-    </DataContext.Provider>
+    
   );
 }
 

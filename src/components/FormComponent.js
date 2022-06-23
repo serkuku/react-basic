@@ -8,11 +8,11 @@ const FormComponent = (props) =>{
     
 
     const inputTitle = (event) =>{
-        console.log(event.target.value);
+        // console.log(event.target.value);
         setTitle(event.target.value);
     }
     const inputAmount = (event) =>{
-        console.log(event.target.value);
+        // console.log(event.target.value);
         setAmount(event.target.value);
     }
     
@@ -22,7 +22,7 @@ const FormComponent = (props) =>{
             title:title,
             amount:Number(amount)
         }
-        console.log('นี่คือ '+itemData.title+' ราคา '+itemData.amount);
+        // console.log('นี่คือ '+itemData.title+' ราคา '+itemData.amount);
         props.onAddItem(itemData)
         setTitle('')
         setAmount('')

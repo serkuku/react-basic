@@ -7,12 +7,12 @@ import { useContext } from 'react';
 
 const PropertyItem = ({title,amount},key) => {
   const status = amount<0 ? "expense":"income"
-  const name = useContext(DataContext)
+  const {income,expense} = useContext(DataContext)
   return (
     <li className={status}>
       <span>{title}</span><span>{amount}</span>
-      <DataContext.Consumer>{value=><span>{value}</span>}</DataContext.Consumer>
-      <span>{name}</span>
+      {/* <DataContext.Consumer>{context=><span>{context.income}{context.expense}</span>}</DataContext.Consumer> */}
+      <span>รับ:{income}จ่าย:{expense}</span>
     </li>
   );
 };
